@@ -1,0 +1,9 @@
+# Specify the required Python version
+python_version >= 3.12.3
+
+# Standard library modules (no need to install separately)
+argparse
+ast
+base64
+os
+sys
