@@ -12,6 +12,26 @@
 
 Ensure you have Python 3.x installed. There are no additional dependencies required.
 
+## Example
+
+```python
+x = input("First number: ")
+y = input("Second number: ")
+
+if x > y :
+  print("true")
+else:
+   print("false")
+```
+```python
+x = input(__builtins__.__import__("base64").b64decode(b"Rmlyc3QgbnVtYmVyOiA=").decode())
+y = input(__builtins__.__import__("base64").b64decode(b"U2Vjb25kIG51bWJlcjog").decode())
+if x > y:
+    print(__builtins__.__import__("base64").b64decode(b"dHJ1ZQ==").decode())
+else:
+    print(__builtins__.__import__("base64").b64decode(b"ZmFsc2U=").decode())
+```
+
 ## Recommended Python Versions
 
 - **Python 3.6 and newer**: The script uses features like **f-strings** and the **ast.unparse()** method, which were introduced in Python 3.6 and Python 3.9 respectively. Python 3.6 and later versions will work, but for the best support and additional features, Python 3.9 or newer is recommended.
