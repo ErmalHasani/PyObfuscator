@@ -68,9 +68,9 @@ class Obfuscator:
 
         # Replace string literals with Base64 encoded versions
         for node in ast.walk(tree):
-            if isinstance(node, ast.Str):
-                encoded_str = b64_encode(node.s)
-                new_code = new_code.replace(repr(node.s), encoded_str)
+            if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                encoded_str = b64_encode(node.value)
+                new_code = new_code.replace(repr(node.value), encoded_str)
 
         return new_code
 
@@ -91,7 +91,7 @@ def main():
 
     # Override the default error handling
     def custom_error(message):
-        print(f'Usage: main.py -i INPUT_FILE [-o OUTPUT_FILE]')
+        print(f'Usage: main.py -i INPUT_FILE -o OUTPUT_FILE')
         sys.exit(1)
 
     parser.error = custom_error
